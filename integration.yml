@@ -23,3 +23,10 @@ stages:
           - publish: out/Contoso.Spaces.Console.exe
             displayName: Upload console app artifact
             artifact: console-app
+          - script: |
+              dotnet pack \
+              --output pkg \
+              -p:Version=1.0.0
+            displayName: Package .Net tool
+          - publish: pkg/Contoso.Spaces.Console.1.0.0.nupkg
+            displayName: upload package artifact
