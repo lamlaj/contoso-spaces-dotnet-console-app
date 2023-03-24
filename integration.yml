@@ -1,0 +1,25 @@
+pool:
+  invImage: ubuntu-latest
+
+stages:
+  - stage: ci
+    displayName: Continuous Integration
+    Jobs:
+      - job: build
+        displayName: Build Project Assets
+        container: mcr/moicrosoft.com/dotnet/sdk:7.0
+        steps:
+          - script: |
+              dotnet publish \
+              --configuratoin Release \
+              --output out \
+              --runtime win-x64 \
+              --self-contained \
+              -p:PublishSingleFile=true \
+              -p:EnableCompressionInSingleFile=true \
+              -p:PublishReadyToRun=true \
+              -p:DebugType=embedded
+            displayName: Publish .NET console project
+          - publish: out/Contoso.Spaces.Console.exe
+            displayName: Upload console app artifact
+            artifact: console-app
