@@ -13,6 +13,12 @@ stages:
               dotnet publish \
               --configuration Release \
               --output out \
+              --runtime win-x64 \
+              --self-contained \
+              -p:PublishSingleFile=true \
+              -p:EnableCompressionInSingleFile=true \
+              -p:PublishReadyToRun=true \
+              -p:DebugType=embedded
             displayName: Publish .NET console project
           - publish: out/Contoso.Spaces.Console.exe
             displayName: Upload console app artifact
