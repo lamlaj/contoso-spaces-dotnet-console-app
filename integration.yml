@@ -11,7 +11,7 @@ stages:
         steps:
           - script: |
               dotnet publish \
-              --configuratoin Release \
+              --configuration Release \
               --output out \
             displayName: Publish .NET console project
           - publish: out/Contoso.Spaces.Console.exe
