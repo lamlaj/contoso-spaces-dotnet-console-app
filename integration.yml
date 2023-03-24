@@ -7,7 +7,7 @@ stages:
     jobs:
       - job: build
         displayName: Build Project Assets
-        container: mcr/moicrosoft.com/dotnet/sdk:7.0
+        container: mcr.microsoft.com/dotnet/sdk:7.0
         steps:
           - script: |
               dotnet publish \
