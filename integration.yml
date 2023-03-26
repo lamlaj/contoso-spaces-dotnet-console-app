@@ -41,7 +41,7 @@ stages:
           artifact: nuget-package
         - script: |
             dotnet nuget push \
-            Contoso.Spaces.Console.1.0.0.nupkg \
+            Cont.Spaces.Con.1.0.0.nupkg \
             --skip-duplicate \
             --api-key $(nuget-api-key) \
             --source https://api.nuget.org/v3/index.json
