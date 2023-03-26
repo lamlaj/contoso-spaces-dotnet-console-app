@@ -3,7 +3,7 @@ using System.Text.Json;
 using Contoso.Spaces.Console.Models;
 using Out = Colorful.Console;
 
-namespace Contoso.Spaces.Console
+namespace Conto.Spaces.Console
 {
     internal class Program
     {

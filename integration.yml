@@ -20,7 +20,7 @@ stages:
               -p:PublishReadyToRun=true \
               -p:DebugType=embedded
             displayName: Publish .NET console project
-          - publish: out/Contoso.Spaces.Console.exe
+          - publish: out/Conto.Spaces.Console.exe
             displayName: Upload console app artifact
             artifact: console-app
           - script: |
@@ -28,7 +28,7 @@ stages:
               --output pkg \
               -p:Version=1.0.0
             displayName: Package .Net tool
-          - publish: pkg/Contoso.Spaces.Console.1.0.0.nupkg
+          - publish: pkg/Conto.Spaces.Console.1.0.0.nupkg
             displayName: upload package artifact
             artifact: nuget-package
       - job: release
@@ -41,7 +41,7 @@ stages:
           artifact: nuget-package
         - script: |
             dotnet nuget push \
-            Cont.Spaces.Con.1.0.0.nupkg \
+            Conto.Spaces.Console.1.0.0.nupkg \
             --skip-duplicate \
             --api-key $(nuget-api-key) \
             --source https://api.nuget.org/v3/index.json
